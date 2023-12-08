@@ -3,12 +3,12 @@ class Node:
         self.element = row_data[:3]
         self.left = row_data[7:10]
         self.right = row_data[12:15]
-
-    def is_start(self):
-        return self.element == "AAA"
-
-    def is_end(self):
-        return self.element == "ZZZ"
+        self.starter = False
+        self.ender = False
+        if self.element[2] == "A":
+            self.starter = True
+        if self.element[2] == "Z":
+            self.ender = True
 
     def __repr__(self):
         return f"{self.element} - ({self.left}, {self.right})"
